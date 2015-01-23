@@ -13,6 +13,9 @@ public class ServerHandler : MonoBehaviour {
     internal bool Authenticated { get { return authenticated; } }
     private List<Business> businesses;
     internal List<Business> Businesses { get { return businesses; } }
+
+    private Canvas mainCanvas, loginCanvas;
+    private BusinessControl businessControl;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -28,6 +31,9 @@ public class ServerHandler : MonoBehaviour {
 
     void Start()
     {
+        mainCanvas = GameObject.Find("BusinessHomeCanvas").GetComponent<Canvas>();
+        loginCanvas = GameObject.Find("LoginCanvas").GetComponent<Canvas>();
+        businessControl = GameObject.Find("BusinessHomeCanvas").GetComponent<BusinessControl>();
         refreshing = false;
         businesses = new List<Business>();
         updating = 0;
@@ -60,7 +66,9 @@ public class ServerHandler : MonoBehaviour {
                 Debug.Log("Login successful");
                 authenticated = true;
                 authenticating = false;
-                Application.LoadLevel("Main");
+                mainCanvas.enabled = true;
+                loginCanvas.enabled = false;
+                businessControl.enabled = true;
             }
             else
             {

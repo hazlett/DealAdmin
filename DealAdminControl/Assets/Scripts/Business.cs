@@ -30,6 +30,11 @@ public class Business {
         Rating = rating;
         PriceRange = priceRange;
     }
+    internal Business(string name, string deal)
+    {
+        BusinessName = name;
+        Deal = deal;
+    }
     internal string ToXML()
     {
         XmlSerializer xmls = new XmlSerializer(typeof(Business));
