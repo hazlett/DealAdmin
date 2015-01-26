@@ -31,9 +31,9 @@ public class ServerHandler : MonoBehaviour {
 
     void Start()
     {
-        mainCanvas = GameObject.Find("BusinessHomeCanvas").GetComponent<Canvas>();
+        mainCanvas = GameObject.Find("BusinessHome").GetComponent<Canvas>();
         loginCanvas = GameObject.Find("LoginCanvas").GetComponent<Canvas>();
-        businessControl = GameObject.Find("BusinessHomeCanvas").GetComponent<BusinessControl>();
+        businessControl = GameObject.Find("BusinessHome").GetComponent<BusinessControl>();
         refreshing = false;
         businesses = new List<Business>();
         updating = 0;

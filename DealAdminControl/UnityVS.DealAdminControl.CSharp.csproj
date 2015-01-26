@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\LoginHandler.cs" />
     <Compile Include="Assets\Scripts\MainGUI.cs" />
     <Compile Include="Assets\Scripts\ServerHandler.cs" />
+    <Compile Include="Assets\UI\Scripts\UIevents.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
